@@ -11,7 +11,7 @@ import Alamofire
 
 struct RandomUserClient {
 	
-	let serviceURL = "https://api.randomuser.me/"
+	let serviceURL = "http://api.randomuser.me/"
 	
 	func fetchUsers(limit limit: Int) {
 		Alamofire.request(.GET, serviceURL, parameters: ["results": limit])
