@@ -19,12 +19,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ReactKit.xcscheme</key>
+		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftTask.xcscheme</key>
+		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4AFE2EBF910A3C9A2E882B35F59E5C6D</key>
+		<key>23B38E1E793EA586AB79496DC2CBA3F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>582B3A6B9046DC170A10A9BC398184DE</key>
+		<key>6545C594B8D71068C2CD53FC205FEAAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE9FE67AC40EE5B7DE1003B43536DBE3</key>
+		<key>7E0C4BD23311AE961CDFE1924ACFF401</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA62980A1F0CF79E80F29E5D13CC3BA8</key>
+		<key>DE9FE67AC40EE5B7DE1003B43536DBE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
