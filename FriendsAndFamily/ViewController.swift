@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 
 		let testAPIClient = RandomUserClient()
-		testAPIClient.fetchUsers(limit: 100)
+		testAPIClient.fetchUsers(limit: 10)
 	}
 
 	override func didReceiveMemoryWarning() {

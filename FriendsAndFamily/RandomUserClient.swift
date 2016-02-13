@@ -23,10 +23,13 @@ struct RandomUserClient {
 				}
 				
 				do {
-					let personList =  try PersonList(json: JSON(data: JSONData))
-					print(personList.results.count)
+					let json = try JSON(data: JSONData)
+					let personList = try PersonList(json: json)
+					
+					print(personList)
 					
 				} catch {
+					print("Error: \(error)")
 					return
 				}
 		}
@@ -36,14 +39,17 @@ struct RandomUserClient {
 
 public struct PersonList {
 	public let nationality: String
-	public let results: Array<JSON>
+	public let results: Array<Person>
 	public let version: String
 }
 
 extension PersonList: JSONDecodable {
 	public init(json value: JSON) throws {
-		nationality = try value.string("nationality")
-		results = try value.array("results")
 		version = try value.string("version")
+		nationality = try value.string("nationality")
+		
+		results = try value.array("results")
+			.map{ try JSON($0.dictionary("user")) }
+			.map(Person.init)
 	}
 }
