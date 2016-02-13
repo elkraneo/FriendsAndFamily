@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Freddy
 
 struct RandomUserClient {
 	
@@ -27,3 +28,23 @@ struct RandomUserClient {
 		}
 	}
 }
+
+
+public struct PersonList {
+	public let nationality: String
+	public let results: Array<JSON>
+	public let version: String
+}
+
+extension PersonList: JSONDecodable {
+	public init(json value: JSON) throws {
+		nationality = try value.string("nationality")
+		results = try value.array("results")
+		version = try value.string("version")
+	}
+}
+
+
+
+
+
