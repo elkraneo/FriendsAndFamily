@@ -17,13 +17,17 @@ struct RandomUserClient {
 	func fetchUsers(limit limit: Int) {
 		Alamofire.request(.GET, serviceURL, parameters: ["results": limit])
 			.responseJSON { response in
-				print(response.request)  // original URL request
-				print(response.response) // URL response
-				print(response.data)     // server data
-				print(response.result)   // result of response serialization
 				
-				if let JSON = response.result.value {
-					print("JSON: \(JSON)")
+				guard let JSONData = response.data else {
+					return
+				}
+				
+				do {
+					let personList =  try PersonList(json: JSON(data: JSONData))
+					print(personList.results.count)
+					
+				} catch {
+					return
 				}
 		}
 	}
@@ -43,8 +47,3 @@ extension PersonList: JSONDecodable {
 		version = try value.string("version")
 	}
 }
-
-
-
-
-
