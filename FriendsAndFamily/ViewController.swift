@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+
+		let testAPIClient = RandomUserClient()
+		testAPIClient.fetchUsers(limit: 1000)
 	}
 
 	override func didReceiveMemoryWarning() {
