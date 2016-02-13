@@ -14,7 +14,8 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 
 		let testAPIClient = RandomUserClient()
-		testAPIClient.fetchUsers(limit: 10)
+		testAPIClient.fetchUser(named: "crazyfish435")
+		testAPIClient.fetchUser(gender: "female")
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	
 
 }
 

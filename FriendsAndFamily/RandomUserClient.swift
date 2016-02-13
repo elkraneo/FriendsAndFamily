@@ -12,10 +12,14 @@ import Freddy
 
 struct RandomUserClient {
 	
+	typealias networkCallCompletion = (list: PersonList) -> ()
 	let serviceURL = "http://api.randomuser.me/"
+	let nationality = "ES"
 	
-	func fetchUsers(limit limit: Int) {
-		Alamofire.request(.GET, serviceURL, parameters: ["results": limit])
+	let delegate = PersonPresenter()
+	
+	func fetchUsers(limit limit: Int, completion: networkCallCompletion) {
+		Alamofire.request(.GET, serviceURL, parameters: ["results": limit, "nationality": nationality])
 			.responseJSON { response in
 				
 				guard let JSONData = response.data else {
@@ -26,12 +30,27 @@ struct RandomUserClient {
 					let json = try JSON(data: JSONData)
 					let personList = try PersonList(json: json)
 					
-					print(personList)
+					completion(list: personList)
 					
 				} catch {
 					print("Error: \(error)")
 					return
 				}
+		}
+	}
+	
+	func fetchUser(named name: String) {
+		self.fetchUsers(limit: 10) { (list) -> () in
+			let users = list.results.filter({ $0.username == name })
+			print("named: \(users.first)")
+		}
+	}
+	
+	func fetchUser(gender gender: String) {
+		self.fetchUsers(limit: 10) { (list) -> () in
+			let users = list.results.filter({ $0.gender == gender })
+			
+			self.delegate.userDidUpdate(users)
 		}
 	}
 }

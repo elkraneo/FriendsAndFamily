@@ -16,6 +16,7 @@
 		AE5DFD9B1C6F3CC400365AD1 /* FriendsAndFamilyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DFD9A1C6F3CC400365AD1 /* FriendsAndFamilyUITests.swift */; };
 		AE5DFDA91C6F48C200365AD1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DFDA81C6F48C200365AD1 /* Person.swift */; };
 		AE5DFDAB1C6F4A7A00365AD1 /* RandomUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DFDAA1C6F4A7A00365AD1 /* RandomUserClient.swift */; };
+		AE5DFDAD1C6F6A8B00365AD1 /* PersonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DFDAC1C6F6A8B00365AD1 /* PersonPresenter.swift */; };
 		D2203778F5D12B3726A68C7E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DDD170BF9BFEEBD6A766E8 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		AE5DFD9C1C6F3CC400365AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE5DFDA81C6F48C200365AD1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AE5DFDAA1C6F4A7A00365AD1 /* RandomUserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserClient.swift; sourceTree = "<group>"; };
+		AE5DFDAC1C6F6A8B00365AD1 /* PersonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPresenter.swift; sourceTree = "<group>"; };
 		BEB26A81FE87DCB81C4DF0B9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EF5EE7D3809D7A03DB7F4959 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				AE5DFDA81C6F48C200365AD1 /* Person.swift */,
 				AE5DFDAA1C6F4A7A00365AD1 /* RandomUserClient.swift */,
 				AE5DFD7C1C6F3CC300365AD1 /* ViewController.swift */,
+				AE5DFDAC1C6F6A8B00365AD1 /* PersonPresenter.swift */,
 			);
 			path = FriendsAndFamily;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				AE5DFDAB1C6F4A7A00365AD1 /* RandomUserClient.swift in Sources */,
 				AE5DFDA91C6F48C200365AD1 /* Person.swift in Sources */,
+				AE5DFDAD1C6F6A8B00365AD1 /* PersonPresenter.swift in Sources */,
 				AE5DFD7D1C6F3CC300365AD1 /* ViewController.swift in Sources */,
 				AE5DFD7B1C6F3CC300365AD1 /* AppDelegate.swift in Sources */,
 			);

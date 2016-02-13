@@ -11,10 +11,12 @@ import Freddy
 
 public struct Person {
 	public let username: String
+	public let gender: String
 }
 
 extension Person: JSONDecodable {
 	public init(json value: JSON) throws {
 		username = try value.string("username")
+		gender = try value.string("gender")
 	}
 }
