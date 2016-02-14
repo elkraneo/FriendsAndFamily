@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol UserPresentable {
-	func userDidUpdate(users: [Person])
-}
-
-struct PersonPresenter: UserPresentable {
+struct PersonPresenter {
 	
-	func userDidUpdate(users: [Person]) {
-		print("gender: \(users)")
-		
+	let testAPIClient = RandomUserClient()
+	
+	func fetchUser(gender gender: String) -> Observable<[String]> {
+		return testAPIClient.fetchUser(gender: gender)
+			.flatMap { persons -> Observable<[String]> in
+				let filteredPersons = persons.map { person in
+					return person.username
+				}
+				
+				return Observable.of(filteredPersons)
+		}
 	}
-
 }

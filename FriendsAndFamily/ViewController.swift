@@ -7,23 +7,24 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
-
+	
+	let presenter = PersonPresenter()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		let testAPIClient = RandomUserClient()
-		testAPIClient.fetchUser(named: "crazyfish435")
-		testAPIClient.fetchUser(gender: "female")
+		
+		_ = presenter.fetchUser(gender: "female")
+			.subscribe( { event in
+				print(event)
+			})
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
-	
-
 }
 

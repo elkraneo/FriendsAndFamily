@@ -9,14 +9,13 @@
 import Foundation
 import Alamofire
 import Freddy
+import RxSwift
 
 struct RandomUserClient {
 	
 	typealias networkCallCompletion = (list: PersonList) -> ()
 	let serviceURL = "http://api.randomuser.me/"
 	let nationality = "ES"
-	
-	let delegate = PersonPresenter()
 	
 	func fetchUsers(limit limit: Int, completion: networkCallCompletion) {
 		Alamofire.request(.GET, serviceURL, parameters: ["results": limit, "nationality": nationality])
@@ -41,19 +40,26 @@ struct RandomUserClient {
 	
 	func fetchUser(named name: String) {
 		self.fetchUsers(limit: 10) { (list) -> () in
-			let users = list.results.filter({ $0.username == name })
+			let users = list.results.filter { $0.username == name }
 			print("named: \(users.first)")
 		}
 	}
 	
-	func fetchUser(gender gender: String) {
-		self.fetchUsers(limit: 10) { (list) -> () in
-			let users = list.results.filter({ $0.gender == gender })
+	func fetchUser(gender gender: String) -> Observable<[Person]> {
+		return Observable.create {o in
+			self.fetchUsers(limit: 10) { (list) -> () in
+				let users = list.results.filter { $0.gender == gender }
+				
+				o.onNext(users)
+				o.onCompleted()
+			}
 			
-			self.delegate.userDidUpdate(users)
+			return NopDisposable.instance
 		}
 	}
 }
+
+
 
 
 public struct PersonList {

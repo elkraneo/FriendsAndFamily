@@ -120,13 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				AE5DFD7A1C6F3CC300365AD1 /* AppDelegate.swift */,
+				AE5DFD7C1C6F3CC300365AD1 /* ViewController.swift */,
 				AE5DFD811C6F3CC300365AD1 /* Assets.xcassets */,
 				AE5DFD861C6F3CC300365AD1 /* Info.plist */,
 				AE5DFD831C6F3CC300365AD1 /* LaunchScreen.storyboard */,
 				AE5DFD7E1C6F3CC300365AD1 /* Main.storyboard */,
 				AE5DFDA81C6F48C200365AD1 /* Person.swift */,
 				AE5DFDAA1C6F4A7A00365AD1 /* RandomUserClient.swift */,
-				AE5DFD7C1C6F3CC300365AD1 /* ViewController.swift */,
 				AE5DFDAC1C6F6A8B00365AD1 /* PersonPresenter.swift */,
 			);
 			path = FriendsAndFamily;
